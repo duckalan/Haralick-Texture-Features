@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Adjacency Matrices">
+      <UniqueIdentifier>{d81ec5d3-bdd8-45dc-829f-40c52b7096cb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Adjacency Matrices\Headers">
+      <UniqueIdentifier>{1f42ce25-1af0-4139-997c-79301ed1d4a6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Adjacency Matrices\Sources">
+      <UniqueIdentifier>{1a2aa276-b380-4bd5-b596-85791055f365}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Haralick Features">
+      <UniqueIdentifier>{03f1f01f-1799-4797-9f1d-8c8813a0d978}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Haralick Features\Headers">
+      <UniqueIdentifier>{e658a90d-5b06-44e2-968a-3b1a38260622}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utility">
+      <UniqueIdentifier>{2f86eb92-bdcf-4b59-a5f4-66f6a838cb0e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utility\Headers">
+      <UniqueIdentifier>{731a1ced-ad66-472e-b494-51948b69ae22}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utility\Sources">
+      <UniqueIdentifier>{f3b73130-040a-4b82-9a11-b676ec814fc4}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="HorizontalAdjacency.cpp">
+      <Filter>Adjacency Matrices\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="MainDiagonalAdjacency.cpp">
+      <Filter>Adjacency Matrices\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="SecondaryDiagonalAdjacency.cpp">
+      <Filter>Adjacency Matrices\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="VerticalAdjacency.cpp">
+      <Filter>Adjacency Matrices\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="CyclicBuffer.cpp">
+      <Filter>Utility\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="pch.cpp">
+      <Filter>Utility\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="Main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="FourthFeature.h">
+      <Filter>Haralick Features\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="HaralickFeature.h">
+      <Filter>Haralick Features\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="AdjacencyMatrix.h">
+      <Filter>Adjacency Matrices\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="SecondaryDiagonalAdjacency.h">
+      <Filter>Adjacency Matrices\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="VerticalAdjacency.h">
+      <Filter>Adjacency Matrices\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="MainDiagonalAdjacency.h">
+      <Filter>Adjacency Matrices\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="HorizontalAdjacency.h">
+      <Filter>Adjacency Matrices\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="BmpHeader.h">
+      <Filter>Utility\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="KernelSizes.h">
+      <Filter>Utility\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="ImageSizes.h">
+      <Filter>Utility\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="CyclicBuffer.h">
+      <Filter>Utility\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="pch.h">
+      <Filter>Utility\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="FirstFeature.h">
+      <Filter>Haralick Features\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="ThirdFeature.h">
+      <Filter>Haralick Features\Headers</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
