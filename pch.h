@@ -6,6 +6,7 @@
 #include <fstream>
 #include <vector>
 #include <memory>
+#include <filesystem>
 
 using i16 = int16_t;
 using i32 = int32_t;

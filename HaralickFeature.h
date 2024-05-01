@@ -4,13 +4,23 @@
 class HaralickFeature
 {
 public:
+	static std::string GetFeatureName(u64 featureNumber)
+	{
+		if (featureNumber != 0 && featureNumber <= 14)
+		{
+			std::string hf{ "hf" };
+			return hf + std::to_string(featureNumber);
+		}
+		return "";
+	}
+
 	virtual void Init(const std::vector<float>& adjMat) noexcept = 0;
 
 	virtual void RemoveElement(
 		u8 i, 
 		u8 j, 
 		float g_ij,
-		float g_ji,
+		float g_ji, 
 		float divCoef
 	) noexcept = 0;
 
@@ -18,7 +28,7 @@ public:
 		u8 i, 
 		u8 j, 
 		float g_ij, 
-		float g_ji,
+		float g_ji, 
 		float divCoef
 	) noexcept = 0;
 

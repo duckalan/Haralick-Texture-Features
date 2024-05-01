@@ -46,6 +46,7 @@
       <Filter>Utility\Sources</Filter>
     </ClCompile>
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="MainProgramFunctions.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="FourthFeature.h">
@@ -90,5 +91,12 @@
     <ClInclude Include="ThirdFeature.h">
       <Filter>Haralick Features\Headers</Filter>
     </ClInclude>
+    <ClInclude Include="FifthFeature.h">
+      <Filter>Haralick Features\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="SecondFeature.h">
+      <Filter>Haralick Features\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="MainProgramFunctions.h" />
   </ItemGroup>
 </Project>

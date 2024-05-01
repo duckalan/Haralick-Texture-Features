@@ -35,7 +35,7 @@ void MainDiagonalAdjacency::RemoveFirstCol(const CyclicBuffer& buffer, u64 xOffs
 		u8 i = buffer(xOffsetPx, y1);
 		u8 j = buffer(xOffsetPx + 1, y2);
 
-		feature_->RemoveElement(j, i, matrix(i, j), matrix(j, i), GetAdjacentPixelCount());
+		feature_->RemoveElement(i, j, matrix(i, j), matrix(j, i), static_cast<float>(GetAdjacentPixelCount()));
 		matrix(j, i) -= normalisedUnit;
 		matrix(i, j) -= normalisedUnit;
 	}
@@ -57,6 +57,6 @@ void MainDiagonalAdjacency::AddLastCol(const CyclicBuffer& buffer, u64 xOffsetPx
 
 		matrix(j, i) += normalisedUnit;
 		matrix(i, j) += normalisedUnit;
-		feature_->AddElement(j, i, matrix(i, j), matrix(j, i), GetAdjacentPixelCount());
+		feature_->AddElement(i, j, matrix(i, j), matrix(j, i), static_cast<float>(GetAdjacentPixelCount()));
 	}
 }
