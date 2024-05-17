@@ -11,9 +11,9 @@ private:
 public:
     void Init(const std::vector<float>& adjMat) noexcept override
     {
-        for (u64 i = 0; i < AdjMatSideLength; i++)
+        for (i64 i = 0; i < AdjMatSideLength; i++)
         {
-            for (u64 j = 0; j < AdjMatSideLength; j++)
+            for (i64 j = 0; j < AdjMatSideLength; j++)
             {
                 sum_ += adjMat[i * AdjMatSideLength + j] / (1 + (i - j) * (i - j));
             }

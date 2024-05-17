@@ -6,19 +6,25 @@
 #include "ImageSizes.h"
 #include "KernelSizes.h"
 
-
 #include "FirstFeature.h"
 #include "SecondFeature.h"
 #include "ThirdFeature.h"
 #include "FourthFeature.h"
 #include "FifthFeature.h"
+#include "SixthFeature.h"
+#include "SeventhFeature.h"
+#include "NinthFeature.h"
+#include "TenthFeature.h"
+#include "TwelfthFeature.h"
 
 #include "AdjacencyMatrix.h"
 #include "HorizontalAdjacency.h"
 #include "VerticalAdjacency.h"
 #include "MainDiagonalAdjacency.h"
 #include "SecondaryDiagonalAdjacency.h"
+
 #include <array>
+#include <iostream>
 
 void MainProgramFunctions::InitFeaturesArray(std::array<std::unique_ptr<HaralickFeature>, 4>& features, u64 featureNumber)
 {
@@ -40,6 +46,25 @@ void MainProgramFunctions::InitFeaturesArray(std::array<std::unique_ptr<Haralick
 			break;
 		case 5ull:
 			features[i] = std::make_unique<FifthFeature>(FifthFeature{});
+			break;
+		case 6ull:
+			features[i] = std::make_unique<SixthFeature>(SixthFeature{});
+			break;
+		case 7ull:
+			features[i] = std::make_unique<SeventhFeature>(SeventhFeature{});
+			break;
+		case 8ull:
+			break;
+		case 9ull:
+			features[i] = std::make_unique<NinthFeature>(NinthFeature{});
+			break;
+		case 10ull:
+			features[i] = std::make_unique<TenthFeature>(TenthFeature{});
+			break;
+		case 11ull:
+			break;
+		case 12ull:
+			features[i] = std::make_unique<TwelfthFeature>(TwelfthFeature{});
 			break;
 		default:
 			break;

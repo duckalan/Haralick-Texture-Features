@@ -98,5 +98,21 @@
       <Filter>Haralick Features\Headers</Filter>
     </ClInclude>
     <ClInclude Include="MainProgramFunctions.h" />
+    <ClInclude Include="TenthFeature.h">
+      <Filter>Haralick Features\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="SixthFeature.h">
+      <Filter>Haralick Features\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="TwelfthFeature.h">
+      <Filter>Haralick Features\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="SeventhFeature.h">
+      <Filter>Haralick Features\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="NinthFeature.h">
+      <Filter>Haralick Features\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="EighthFeature.h" />
   </ItemGroup>
 </Project>

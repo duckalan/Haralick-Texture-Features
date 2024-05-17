@@ -1,11 +1,12 @@
 #pragma once
 #include "HaralickFeature.h"
 
-class SecondFeature :
+class TenthFeature :
     public HaralickFeature
 {
 private:
     float sum_{};
+    float sumOfSquares_{};
 
 public:
     void Init(const std::vector<float>& adjMat) noexcept override
@@ -19,8 +20,10 @@ public:
                 elementSum1 += adjMat[i1 * AdjMatSideLength + i1 - n];
                 elementSum2 += adjMat[(j2 - n) * AdjMatSideLength + j2];
             }
-            sum_ += n * n * elementSum1;
-            sum_ += n * n * elementSum2;
+            sumOfSquares_ += n * n * elementSum1;
+            sumOfSquares_ += n * n * elementSum2;
+            sum_ += n * elementSum1;
+            sum_ += n * elementSum1;
         }
     }
 
@@ -28,23 +31,26 @@ public:
     {
         float normalisedUnit = 1.f / divCoef;
         int n = abs(i - j);
-        sum_ -= 2 * n * n * normalisedUnit;
+        sumOfSquares_ -= 2 * n * n * normalisedUnit;
+        sum_ -= 2 * n * normalisedUnit;
     }
 
     void AddElement(u8 i, u8 j, float g_ij, float g_ji, float divCoef) noexcept override
     {
         float normalisedUnit = 1.f / divCoef;
         int n = abs(i - j);
-        sum_ += 2 * n * n * normalisedUnit;
+        sumOfSquares_ += 2 * n * n * normalisedUnit;
+        sum_ += 2 * n * normalisedUnit;
     }
 
     float GetValue() const noexcept override
     {
-        return sqrt(sum_);
+        return sqrt(std::max(0.f, sumOfSquares_ - sum_ * sum_));
     }
 
     void Clear() noexcept override
     {
+        sumOfSquares_ = 0;
         sum_ = 0;
     }
 };

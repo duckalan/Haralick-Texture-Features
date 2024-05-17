@@ -25,7 +25,7 @@ void HorizontalAdjacency::Init(const CyclicBuffer& buffer, u64 xOffsetPx)
 void HorizontalAdjacency::RemoveFirstCol(const CyclicBuffer& buffer, u64 xOffsetPx)
 {
 	auto& matrix = (*this);
-	float normalisedUnit = 1.f / GetAdjacentPixelCount();;
+	float normalisedUnit = 1.f / GetAdjacentPixelCount();
 
 	for (u64 k = 0; k < kernelSideSize_; k++)
 	{
