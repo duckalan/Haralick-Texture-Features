@@ -1,6 +1,6 @@
 #pragma once
 #include "HaralickFeature.h"
-class NinthFeature :
+class NinthFeature final :
 	public HaralickFeature
 {
 private:
@@ -29,6 +29,7 @@ public:
 		float normalisedUnit = 1.f / divCoef;
 		float g1 = g_ij;
 		float g2 = g_ij - normalisedUnit;
+
 		if (i == j)
 		{
 			g2 -= normalisedUnit;

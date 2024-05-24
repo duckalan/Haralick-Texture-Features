@@ -2,7 +2,7 @@
 #include "pch.h"
 #include "HaralickFeature.h"
 
-class FifthFeature :
+class FifthFeature final :
     public HaralickFeature
 {
 private:

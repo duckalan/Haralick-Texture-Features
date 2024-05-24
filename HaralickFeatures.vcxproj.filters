@@ -113,6 +113,14 @@
     <ClInclude Include="NinthFeature.h">
       <Filter>Haralick Features\Headers</Filter>
     </ClInclude>
-    <ClInclude Include="EighthFeature.h" />
+    <ClInclude Include="EighthFeature.h">
+      <Filter>Haralick Features\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="ThirteenthFeature.h">
+      <Filter>Haralick Features\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="EleventhFeature.h">
+      <Filter>Haralick Features\Headers</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

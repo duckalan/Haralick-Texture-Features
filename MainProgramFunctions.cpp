@@ -13,9 +13,12 @@
 #include "FifthFeature.h"
 #include "SixthFeature.h"
 #include "SeventhFeature.h"
+#include "EighthFeature.h"
 #include "NinthFeature.h"
 #include "TenthFeature.h"
+#include "EleventhFeature.h"
 #include "TwelfthFeature.h"
+#include "ThirteenthFeature.h"
 
 #include "AdjacencyMatrix.h"
 #include "HorizontalAdjacency.h"
@@ -54,6 +57,7 @@ void MainProgramFunctions::InitFeaturesArray(std::array<std::unique_ptr<Haralick
 			features[i] = std::make_unique<SeventhFeature>(SeventhFeature{});
 			break;
 		case 8ull:
+			features[i] = std::make_unique<EighthFeature>(EighthFeature{});
 			break;
 		case 9ull:
 			features[i] = std::make_unique<NinthFeature>(NinthFeature{});
@@ -62,9 +66,13 @@ void MainProgramFunctions::InitFeaturesArray(std::array<std::unique_ptr<Haralick
 			features[i] = std::make_unique<TenthFeature>(TenthFeature{});
 			break;
 		case 11ull:
+			features[i] = std::make_unique<EleventhFeature>(EleventhFeature{});
 			break;
 		case 12ull:
 			features[i] = std::make_unique<TwelfthFeature>(TwelfthFeature{});
+			break;
+		case 13ull:
+			features[i] = std::make_unique<ThirteenthFeature>(ThirteenthFeature{});
 			break;
 		default:
 			break;

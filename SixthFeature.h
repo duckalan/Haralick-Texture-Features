@@ -1,7 +1,7 @@
 #pragma once
 #include "HaralickFeature.h"
 
-class SixthFeature :
+class SixthFeature final :
     public HaralickFeature
 {
 private:

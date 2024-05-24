@@ -1,61 +1,35 @@
 #pragma once
 #include "HaralickFeature.h"
-class EighthFeature final :
-	public HaralickFeature
+class EleventhFeature final :
+    public HaralickFeature
 {
 private:
-    float sumsForNs_[AdjMatSideLength * 2 - 1]{};
+    float sumsForNs_[AdjMatSideLength - 1]{};
     float mainSum_{};
 
 public:
     void Init(const std::vector<float>& adjMat) noexcept override
     {
-        for (i64 n = 1; n < AdjMatSideLength; n++)
+        for (i64 n = 1; n < AdjMatSideLength - 1; n++)
         {
-            i64 i = 0;
-            i64 j = n;
-            float elementSum = 0;
-
-            while (i <= n)
+            float elementSum1 = 0;
+            float elementSum2 = 0;
+            for (i64 i1 = n, j2 = n; i1 < AdjMatSideLength && j2 < AdjMatSideLength; i1++, j2++)
             {
-                elementSum += adjMat[i * AdjMatSideLength + j];
-                i++;
-                j--;
+                elementSum1 += adjMat[i1 * AdjMatSideLength + i1 - n];
+                elementSum2 += adjMat[(j2 - n) * AdjMatSideLength + j2];
             }
-
-            if (elementSum > 0)
+            if (elementSum1 > 0 || elementSum2 > 0)
             {
-                mainSum_ += log2(elementSum) * elementSum;
-                sumsForNs_[n - 1] = elementSum;
+                mainSum_ += log2(elementSum1 + elementSum2) * (elementSum1 + elementSum2);
+                sumsForNs_[n - 1] += elementSum1 + elementSum2;
             }
-        }
-
-        i64 k = 1;
-        for (i64 n = AdjMatSideLength; n < AdjMatSideLength * 2; n++)
-        {
-            i64 i = k;
-            i64 j = AdjMatSideLength - 1;
-            float elementSum = 0;
-
-            while (i < AdjMatSideLength)
-            {
-                elementSum += adjMat[i * AdjMatSideLength + j];
-                i++;
-                j--;
-            }
-
-            if (elementSum > 0)
-            {
-                mainSum_ += log2(elementSum) * elementSum;
-                sumsForNs_[n - 1] = elementSum;
-            }
-            k++;
         }
     }
 
     void RemoveElement(u8 i, u8 j, float g_ij, float g_ji, float divCoef) noexcept override
     {
-        i32 n = i + j;
+        i32 n = abs(i - j);
         if (n != 0)
         {
             float normalisedUnit = 1.f / divCoef;
@@ -75,7 +49,7 @@ public:
 
     void AddElement(u8 i, u8 j, float g_ij, float g_ji, float divCoef) noexcept override
     {
-        i32 n = i + j;
+        i32 n = abs(i - j);
         if (n != 0)
         {
             float normalisedUnit = 1.f / divCoef;
@@ -94,18 +68,18 @@ public:
         }
     }
 
-	float GetValue() const noexcept override
-	{
-		return -mainSum_;
-	}
+    float GetValue() const noexcept override
+    {
+        return -mainSum_;
+    }
 
-	void Clear() noexcept override
-	{
-		mainSum_ = 0;
-        for (size_t i = 0; i < AdjMatSideLength * 2 - 1; i++)
+    void Clear() noexcept override
+    {
+        mainSum_ = 0;
+        for (size_t i = 0; i < AdjMatSideLength - 1; i++)
         {
             sumsForNs_[i] = 0;
         }
-	}
+    }
 };
 

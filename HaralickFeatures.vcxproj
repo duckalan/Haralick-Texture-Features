@@ -156,6 +156,7 @@
     <ClInclude Include="BmpHeader.h" />
     <ClInclude Include="CyclicBuffer.h" />
     <ClInclude Include="EighthFeature.h" />
+    <ClInclude Include="EleventhFeature.h" />
     <ClInclude Include="FifthFeature.h" />
     <ClInclude Include="FirstFeature.h" />
     <ClInclude Include="FourthFeature.h" />
@@ -173,6 +174,7 @@
     <ClInclude Include="SixthFeature.h" />
     <ClInclude Include="TenthFeature.h" />
     <ClInclude Include="ThirdFeature.h" />
+    <ClInclude Include="ThirteenthFeature.h" />
     <ClInclude Include="TwelfthFeature.h" />
     <ClInclude Include="VerticalAdjacency.h" />
   </ItemGroup>
