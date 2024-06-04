@@ -40,7 +40,7 @@ public:
 
     float GetValue() const noexcept override
     {
-        return sqrt(sum_);
+        return sqrt(std::max(0.f, sum_));
     }
 
     void Clear() noexcept override

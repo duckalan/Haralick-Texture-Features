@@ -75,14 +75,14 @@ public:
 
 	float GetValue() const noexcept override
 	{
-		return pow(
+		return pow(std::max(0.f,
 			2 * sum1_ + 
 			8 * sum2_ - 
 			16 * mean_ * sum3_ +
 			6 * sum4_ -
 			48 * mean_ * sum5_ +
 			48 * mean_ * mean_ * (sum6_ + sum7_) -
-			48 * mean_ * mean_ * mean_ * mean_, 
+			48 * mean_ * mean_ * mean_ * mean_), 
 			1.f / 4
 		);
 	}
