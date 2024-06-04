@@ -122,5 +122,8 @@
     <ClInclude Include="EleventhFeature.h">
       <Filter>Haralick Features\Headers</Filter>
     </ClInclude>
+    <ClInclude Include="FourteenthFeature.h">
+      <Filter>Haralick Features\Headers</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

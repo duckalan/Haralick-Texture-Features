@@ -159,6 +159,7 @@
     <ClInclude Include="EleventhFeature.h" />
     <ClInclude Include="FifthFeature.h" />
     <ClInclude Include="FirstFeature.h" />
+    <ClInclude Include="FourteenthFeature.h" />
     <ClInclude Include="FourthFeature.h" />
     <ClInclude Include="HaralickFeature.h" />
     <ClInclude Include="HorizontalAdjacency.h" />
