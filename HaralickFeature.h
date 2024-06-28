@@ -36,10 +36,6 @@ public:
 
 	inline virtual void Clear() noexcept = 0;
 
-	// ДОБАВИТЬ UPDATE С СИГНАТУРОЙ ADDELEMENT ПУСТОЙ ПО УМОЛЧАНИЮ
-	// ДОБАВИТЬ ISUPDATENEEDED С FALSE ПО УМОЛЧАНИЮ
-	// ИСПОЛЬЗОВАТЬ ИХ ДЛЯ 13 И 14 ПРИЗНАКОВ
-
 protected:
 	static const u64 AdjMatSideLength = 256;
 };

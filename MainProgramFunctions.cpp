@@ -179,7 +179,8 @@ void MainProgramFunctions::CalculateHaralickFeature(
 
 	BmpHeader header{};
 	input.read((char*)&header, sizeof(header));
-	if (header.dibHeaderSizeBytes != BmpHeader::DibHeaderSizeBytes)
+	if (header.dibHeaderSizeBytes != BmpHeader::DibHeaderSizeBytes ||
+		header.bitPerPixel != BmpHeader::BytePerPx * 8)
 	{
 		throw std::exception("Can't work with bmp of this type. Use bmp only with BITMAPINFOHEADER");
 	}
@@ -256,6 +257,34 @@ void MainProgramFunctions::CalculateHaralickFeature(
 			for (auto& adjMat : adjMatrices)
 			{
 				adjMat->RemoveFirstCol(cyclicBuffer, xOffsetPx);
+
+				float sumOfSquareSumMulPij = 0;
+				float sumOfCubeSumMulPij = 0;
+				float sumOfPow4SumMulPij = 0;
+				for (u64 i = 0; i < 256; i++)
+				{
+					float p_i = 0;
+
+					for (u64 j = 0; j < 256; j++)
+					{
+						sumOfSquareSumMulPij += (i + j) * (i + j)
+							* (*adjMat)(j, i);
+						sumOfCubeSumMulPij += (i + j) * (i + j) * (i + j)
+							* (*adjMat)(j, i);
+						sumOfPow4SumMulPij += (i + j) * (i + j) * (i + j) * (i + j)
+							* (*adjMat)(j, i);
+					}
+				}
+				auto a = 5;
+
+				/*ThirteenthFeature& feature = (ThirteenthFeature&) (*adjMat->feature_);
+
+				if (abs(feature.sumOfSquareSumMulPij_ - sumOfSquareSumMulPij) > 0.5f)
+				{
+					std::cout << "!!!!!!\n";
+					std::cout << abs(feature.sumOfSquareSumMulPij_ - sumOfSquareSumMulPij);
+					std::cout << "\n!!!!!!";
+				}*/
 			}
 
 			xOffsetPx++;
@@ -283,4 +312,5 @@ void MainProgramFunctions::CalculateHaralickFeature(
 			matrix->Clear();
 		}
 	}
+	output.flush();
 }
